@@ -1,0 +1,26 @@
+updates:
+{{- range $netins := index .Vars .TargetName "network-instances" }}
+  {{- if $bgp := index $netins "protocols" "bgp" }}
+  - path: "/network-instance[name={{ index $netins "name" }}]/protocols/bgp"
+    value: 
+      admin-state: {{ index $bgp "admin-state" | default "disable" }}
+      autonomous-system: {{ index $bgp "autonomous-system" }}
+      router-id: {{ index $bgp "router-id" }}
+      group:
+      {{- range $group := index $bgp "group" }}
+        - admin-state: {{ index $group "admin-state" }}
+          group-name: {{ index $group "group-name" }}
+      {{- end }}
+      neighbor:
+      {{- range $neighbor := index $bgp "neighbor" }}
+        - admin-state: {{ index $neighbor "admin-state" | default "enable" }}
+          export-policy: {{ index $neighbor "export-policy"}}
+          failure-detection:
+            enable-bfd: "true"
+            fast-failover: "true"
+          peer-address: {{ index $neighbor "peer-address" }}
+          peer-as: {{ index $neighbor "peer-as" }}
+          peer-group: {{ index $neighbor "peer-group" }}
+      {{- end }}
+  {{- end }}    
+{{- end }}

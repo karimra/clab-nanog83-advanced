@@ -1,0 +1,41 @@
+username: admin
+password: admin
+skip-verify: true
+encoding: json_ietf
+log: true
+
+loader:
+  type: docker
+  filters:
+    - containers:
+      - label=clab-node-kind: srl
+        label=containerlab: nanog83
+
+subscriptions:
+  interfaces:
+    paths:
+      - /interface/statistics
+    stream-mode: sample
+    sample-interval: 10s
+  bgp:
+    paths:
+      - /network-instance/protocols/bgp/statistics
+    stream-mode: sample
+    sample-interval: 10s
+
+api-server:
+  enable-metrics: true
+
+# clustering config
+clustering:
+  cluster-name: cluster1
+  targets-watch-timer: 30s
+  locker:
+    type: consul
+    address: clab-nanog83-consul-agent:8500
+
+outputs:
+  output1:
+    type: prometheus
+    service-registration:
+      address: clab-nanog83-consul-agent:8500

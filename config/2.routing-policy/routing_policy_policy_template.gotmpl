@@ -1,0 +1,16 @@
+updates:
+{{- range $policy := index .Vars "routing-policy" "policy" }}
+- path: /routing-policy/policy[name={{ index $policy "name" }}]
+  value:
+  - default-action:
+      reject: {}
+    name: {{ index $policy "name" }}
+    statement:
+  {{- range $statement := index $policy "statement" }}
+    - action:
+        accept: {}
+      match:
+        prefix-set: {{ index $statement "match" "prefix-set" }} 
+      sequence-id: {{ index $statement "sequence-id" }}
+  {{- end }}
+{{- end }}

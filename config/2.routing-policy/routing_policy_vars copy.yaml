@@ -1,0 +1,349 @@
+clab-nanog83-super-spine1:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+
+clab-nanog83-super-spine2:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+        
+clab-nanog83-spine1:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+        
+clab-nanog83-spine2:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+
+clab-nanog83-spine3:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+        
+clab-nanog83-spine4:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+
+clab-nanog83-leaf1:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+
+clab-nanog83-leaf2:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+
+clab-nanog83-leaf3:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+
+clab-nanog83-leaf4:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+        
+clab-nanog83-leaf5:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+        
+clab-nanog83-leaf6: 
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+    
+clab-nanog83-leaf7:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
+
+clab-nanog83-leaf8:
+  routing-policy:
+    prefix-set:
+      - name: super-spines-loopbacks
+        prefix: 30.0.0.0/8
+        mask-length-range: 8..32
+      - name: spines-loopbacks
+        prefix: 20.0.0.0/8
+        mask-length-range: 8..32
+      - name: leaves-loopbacks
+        prefix: 10.0.0.0/8
+        mask-length-range: 8..32
+    policy:
+      - name: "export-loopbacks"
+        statement:
+        - sequence-id: 1
+          match:
+            prefix-set: super-spines-loopbacks
+        - sequence-id: 2
+          match:
+            prefix-set: spines-loopbacks
+        - sequence-id: 3
+          match:
+            prefix-set: leaves-loopbacks
