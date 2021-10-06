@@ -17,9 +17,28 @@ subscriptions:
       - /interface/statistics
     stream-mode: sample
     sample-interval: 10s
+
   bgp:
     paths:
       - /network-instance/protocols/bgp/statistics
+    stream-mode: sample
+    sample-interval: 10s
+
+  ipv4_routes:
+    paths:
+      - /network-instance/route-table/ipv4-unicast/statistics
+    stream-mode: sample
+    sample-interval: 10s
+
+  cpu:
+    paths:
+      - /platform/control[slot=*]/cpu[index=all]/total
+    stream-mode: sample
+    sample-interval: 10s
+
+  mem:
+    paths:
+      - /platform/control[slot=*]/memory
     stream-mode: sample
     sample-interval: 10s
 
@@ -30,6 +49,7 @@ api-server:
 clustering:
   cluster-name: cluster1
   targets-watch-timer: 30s
+  leader-wait-timer: 120s
   locker:
     type: consul
     address: clab-nanog83-consul-agent:8500
@@ -37,5 +57,18 @@ clustering:
 outputs:
   output1:
     type: prometheus
+    metric-prefix: gnmic
+    append-subscription-name: true
+    event-processors:
+      - trim-prefixes
     service-registration:
       address: clab-nanog83-consul-agent:8500
+
+processors:
+  trim-prefixes:
+    event-strings:
+      value-names:
+        - ".*"
+      transforms:
+        - path-base:
+            apply-on: "name"
