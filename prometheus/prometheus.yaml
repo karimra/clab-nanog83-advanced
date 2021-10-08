@@ -3,7 +3,15 @@ global:
   evaluation_interval: 10s 
 
 scrape_configs:
-  - job_name: 'gnmic'
+  - job_name: 'gnmic-internals'
     scrape_interval: 10s 
     consul_sd_configs:
       - server: clab-nanog83-consul-agent:8500
+        services:
+          - cluster1-gnmic-api
+  - job_name: 'gnmic-telemetry'
+    scrape_interval: 10s 
+    consul_sd_configs:
+      - server: clab-nanog83-consul-agent:8500
+        services:
+          - prometheus-output1
