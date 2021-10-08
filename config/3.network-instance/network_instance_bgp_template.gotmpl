@@ -10,6 +10,8 @@ updates:
       {{- range $group := index $bgp "group" }}
         - admin-state: {{ index $group "admin-state" }}
           group-name: {{ index $group "group-name" }}
+          timers:
+            connect-retry: {{ index $group "timer-connect-retry" | default 120 }}
       {{- end }}
       neighbor:
       {{- range $neighbor := index $bgp "neighbor" }}

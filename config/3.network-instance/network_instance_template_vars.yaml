@@ -15,6 +15,7 @@ clab-nanog83-super-spine1:
           group:
           - admin-state: enable
             group-name: "spines"
+            timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -73,6 +74,7 @@ clab-nanog83-super-spine2:
           group:
           - admin-state: enable
             group-name: "spines"
+            timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -133,8 +135,10 @@ clab-nanog83-spine1:
           group:
             - admin-state: enable
               group-name: "super-spines"
+              timer-connect-retry: 10
             - admin-state: enable
               group-name: "leaves"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -211,8 +215,10 @@ clab-nanog83-spine2:
           group:
             - admin-state: enable
               group-name: "super-spines"
+              timer-connect-retry: 10
             - admin-state: enable
               group-name: "leaves"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -289,8 +295,10 @@ clab-nanog83-spine3:
           group:
             - admin-state: enable
               group-name: "super-spines"
+              timer-connect-retry: 10
             - admin-state: enable
               group-name: "leaves"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -367,8 +375,10 @@ clab-nanog83-spine4:
           group:
             - admin-state: enable
               group-name: "super-spines"
+              timer-connect-retry: 10
             - admin-state: enable
               group-name: "leaves"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -441,6 +451,7 @@ clab-nanog83-leaf1:
           group:
             - admin-state: enable
               group-name: "spines"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -481,6 +492,7 @@ clab-nanog83-leaf2:
           group:
             - admin-state: enable
               group-name: "spines"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -521,6 +533,7 @@ clab-nanog83-leaf3:
           group:
             - admin-state: enable
               group-name: "spines"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -561,6 +574,7 @@ clab-nanog83-leaf4:
           group:
             - admin-state: enable
               group-name: "spines"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -601,6 +615,7 @@ clab-nanog83-leaf5:
           group:
             - admin-state: enable
               group-name: "spines"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -641,6 +656,7 @@ clab-nanog83-leaf6:
           group:
             - admin-state: enable
               group-name: "spines"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -681,6 +697,7 @@ clab-nanog83-leaf7:
           group:
             - admin-state: enable
               group-name: "spines"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
@@ -721,6 +738,7 @@ clab-nanog83-leaf8:
           group:
             - admin-state: enable
               group-name: "spines"
+              timer-connect-retry: 10
           ipv4-unicast:
             multipath:
               max-paths-level-1: "32"
