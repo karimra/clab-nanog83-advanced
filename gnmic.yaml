@@ -6,6 +6,7 @@ log: true
 
 loader:
   type: docker
+  interval: 60s
   filters:
     - containers:
       - label=clab-node-kind: srl
@@ -49,7 +50,7 @@ api-server:
 clustering:
   cluster-name: cluster1
   targets-watch-timer: 30s
-  leader-wait-timer: 120s
+  leader-wait-timer: 20s
   locker:
     type: consul
     address: clab-nanog83-consul-agent:8500
