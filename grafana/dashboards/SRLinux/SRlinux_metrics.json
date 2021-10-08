@@ -21,7 +21,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1633559900503,
+  "iteration": 1633708933409,
   "links": [],
   "panels": [
     {
@@ -375,7 +375,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "",
+  "refresh": "10s",
   "schemaVersion": 30,
   "style": "dark",
   "tags": [],
@@ -415,7 +415,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "default",
           "value": "default"
         },
@@ -480,5 +480,5 @@
   "timezone": "",
   "title": "SR Linux Metrics",
   "uid": "WWvmhhvnk",
-  "version": 4
+  "version": 1
 }
