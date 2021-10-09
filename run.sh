@@ -14,7 +14,7 @@ echo $srl_nodes
 # configure interfaces via gNMI 
 gnmic --log \
       -a ${srl_nodes} \
-      --skip-verify \
+      --tls-ca clab-nanog83/ca/root/root-ca.pem \
       -u admin \
       -p admin \
       -e json_ietf \
@@ -25,7 +25,7 @@ gnmic --log \
 # configure subinterfaces via gNMI 
 gnmic --log \
       -a ${srl_nodes} \
-      --skip-verify \
+      --tls-ca clab-nanog83/ca/root/root-ca.pem \
       -u admin \
       -p admin \
       -e json_ietf \
@@ -36,7 +36,7 @@ gnmic --log \
 # configure routing policy prefix set via gNMI 
 gnmic --log \
       -a ${srl_nodes} \
-      --skip-verify \
+      --tls-ca clab-nanog83/ca/root/root-ca.pem \
       -u admin \
       -p admin \
       -e json_ietf \
@@ -47,7 +47,7 @@ gnmic --log \
 # configure routing policy policy via gNMI 
 gnmic --log \
       -a ${srl_nodes} \
-      --skip-verify \
+      --tls-ca clab-nanog83/ca/root/root-ca.pem \
       -u admin \
       -p admin \
       -e json_ietf \
@@ -59,7 +59,7 @@ gnmic --log \
 # configure network-instance via gNMI 
 gnmic --log \
       -a ${srl_nodes} \
-      --skip-verify \
+      --tls-ca clab-nanog83/ca/root/root-ca.pem \
       -u admin \
       -p admin \
       -e json_ietf \
@@ -70,7 +70,7 @@ gnmic --log \
 # configure bgp via gNMI 
 gnmic --log \
       -a ${srl_nodes} \
-      --skip-verify \
+      --tls-ca clab-nanog83/ca/root/root-ca.pem \
       -u admin \
       -p admin \
       -e json_ietf \
@@ -84,7 +84,7 @@ do
 echo ""
 echo "$(date)"
 gnmic -a clab-nanog83-spine1,clab-nanog83-spine2,clab-nanog83-spine3,clab-nanog83-spine4 \
-      --skip-verify \
+      --tls-ca clab-nanog83/ca/root/root-ca.pem \
       -u admin \
       -p admin \
       -e ascii \

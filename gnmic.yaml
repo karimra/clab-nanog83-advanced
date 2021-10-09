@@ -1,16 +1,18 @@
 username: admin
 password: admin
-skip-verify: true
+#skip-verify: true
+tls-ca: clab-nanog83/ca/root/root-ca.pem
 encoding: json_ietf
 log: true
 
 loader:
-  type: docker
+  type: docker # file, consul, http
   interval: 60s
   filters:
     - containers:
-      - label=clab-node-kind: srl
-        label=containerlab: nanog83
+        # equivalent to: docker ps -f label=containerlab=nanog83 -f label=clab-node-kind=srl
+      - label=containerlab: nanog83
+        label=clab-node-kind: srl
 
 subscriptions:
   interfaces:
