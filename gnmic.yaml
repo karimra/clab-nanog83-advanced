@@ -51,7 +51,7 @@ api-server:
 clustering:
   cluster-name: cluster1
   targets-watch-timer: 30s
-  leader-wait-timer: 20s
+  leader-wait-timer: 60s
   locker:
     type: consul
     address: clab-nanog83-consul-agent:8500
