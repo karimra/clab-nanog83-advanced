@@ -5,11 +5,13 @@ on:
 jobs:
   install_containerlab:
     runs-on: 
+      - self-hosted
       - kss
     steps:
       - run: bash -c "$(curl -sL https://get-clab.srlinux.dev)"
   install_gnmic:
     runs-on: 
+      - self-hosted
       - kss
     steps:
       - run: bash -c "$(curl -sL https://get-gnmic.kmrd.dev)"
