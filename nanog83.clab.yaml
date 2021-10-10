@@ -28,6 +28,23 @@ topology:
     leaf7:
     leaf8:
     
+    client1:
+      kind: linux
+      image: ghcr.io/hellt/network-multitool
+    
+    client2:
+      kind: linux
+      image: ghcr.io/hellt/network-multitool
+
+    client3:
+      kind: linux
+      image: ghcr.io/hellt/network-multitool
+      
+    client4:
+      kind: linux
+      image: ghcr.io/hellt/network-multitool
+      
+
     gnmic1:
       kind: linux
       #image: ghcr.io/karimra/gnmic:0.20.0-beta
@@ -143,3 +160,15 @@ topology:
     - endpoints: ["spine4:e1-4", "leaf6:e1-2"]
     - endpoints: ["spine4:e1-5", "leaf7:e1-2"]
     - endpoints: ["spine4:e1-6", "leaf8:e1-2"]
+    # client1 links
+    - endpoints: ["leaf1:e1-36", "client1:eth1"]
+    - endpoints: ["leaf2:e1-36", "client1:eth2"]
+    # client2 links
+    - endpoints: ["leaf3:e1-36", "client2:eth1"]
+    - endpoints: ["leaf4:e1-36", "client2:eth2"]
+    # client3 links
+    - endpoints: ["leaf5:e1-36", "client3:eth1"]
+    - endpoints: ["leaf6:e1-36", "client3:eth2"]
+    # client4 links
+    - endpoints: ["leaf7:e1-36", "client4:eth1"]
+    - endpoints: ["leaf8:e1-36", "client4:eth2"]
