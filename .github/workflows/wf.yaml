@@ -9,13 +9,15 @@ jobs:
       - kss
     steps:
       - run: bash -c "$(curl -sL https://get-clab.srlinux.dev)"
+  
   install_gnmic:
     runs-on: 
       - self-hosted
       - kss
     steps:
       - run: bash -c "$(curl -sL https://get-gnmic.kmrd.dev)"
-  checkout:
+  
+  deploy_lab:
     runs-on: 
       - self-hosted
       - kss
@@ -24,5 +26,122 @@ jobs:
       - install_gnmic
     steps:
       - uses: actions/checkout@v2
-      - run: pwd
-      - run: sudo bash run.sh
+      - run: sudo clab deploy -t nanog83.clab.yaml --reconfigure
+  
+  configure_interfaces:
+    runs-on: 
+      - self-hosted
+      - kss
+    needs:
+      - deploy_lab
+    steps:
+      - run: |
+          gnmic --log \
+          -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
+          --tls-ca clab-nanog83/ca/root/root-ca.pem \
+          -u admin \
+          -p admin \
+          -e json_ietf \
+          set \
+          --request-file config/1.interfaces/interfaces_template.gotmpl \
+          --request-vars config/1.interfaces/interfaces_template_vars.yaml
+  
+  configure_subinterfaces:
+    runs-on: 
+      - self-hosted
+      - kss
+    needs:
+      - configure_interfaces
+    steps:
+      - run: |
+          gnmic --log \
+          -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
+          --tls-ca clab-nanog83/ca/root/root-ca.pem \
+          -u admin \
+          -p admin \
+          -e json_ietf \
+          set \
+          --request-file config/1.interfaces/subinterfaces_template.gotmpl \
+          --request-vars config/1.interfaces/interfaces_template_vars.yaml
+
+  configure_routing_policy:
+    runs-on: 
+      - self-hosted
+      - kss
+    needs:
+      - configure_interfaces
+    steps:
+      - run: |
+          gnmic --log \
+          -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
+          --tls-ca clab-nanog83/ca/root/root-ca.pem \
+          -u admin \
+          -p admin \
+          -e json_ietf \
+          set \
+          --request-file config/2.routing-policy/routing_policy_prefix_set_template.gotmpl \
+          --request-vars config/2.routing-policy/routing_policy_vars.yaml
+          gnmic --log \
+          -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
+          --tls-ca clab-nanog83/ca/root/root-ca.pem \
+          -u admin \
+          -p admin \
+          -e json_ietf \
+          set \
+          --request-file config/2.routing-policy/routing_policy_policy_template.gotmpl \
+          --request-vars config/2.routing-policy/routing_policy_vars.yaml
+
+  configure_network_instance:
+    runs-on: 
+      - self-hosted
+      - kss
+    needs:
+      - configure_subinterfaces
+      - configure_routing_policy
+    steps:
+      - run: |
+          gnmic --log \
+          -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
+          --tls-ca clab-nanog83/ca/root/root-ca.pem \
+          -u admin \
+          -p admin \
+          -e json_ietf \
+          set \
+          --request-file config/3.network-instance/network_instance_template.gotmpl \
+          --request-vars config/3.network-instance/network_instance_template_vars.yaml
+
+  configure_bgp:
+    runs-on: 
+      - self-hosted
+      - kss
+    needs:
+      - configure_subinterfaces
+      - configure_routing_policy
+    steps:
+      - run: |
+          gnmic --log \
+          -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
+          --tls-ca clab-nanog83/ca/root/root-ca.pem \
+          -u admin \
+          -p admin \
+          -e json_ietf \
+          set \
+          --request-file config/3.network-instance/network_instance_bgp_template.gotmpl \
+          --request-vars config/3.network-instance/network_instance_template_vars.yaml
+  
+  check_bgp_status:
+    runs-on: 
+      - self-hosted
+      - kss
+    needs:
+      - configure_bgp
+    steps:
+      - run: |
+          gnmic -a clab-nanog83-spine1,clab-nanog83-spine2,clab-nanog83-spine3,clab-nanog83-spine4 \
+          --tls-ca clab-nanog83/ca/root/root-ca.pem \
+          -u admin \
+          -p admin \
+          -e ascii \
+          --format flat \
+          get \
+          --path /network-instance[name=default]/protocols/bgp/oper-state
