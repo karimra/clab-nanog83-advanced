@@ -70,7 +70,7 @@ jobs:
       - self-hosted
       - kss
     needs:
-      - configure_interfaces
+      - deploy_lab
     steps:
       - run: |
           gnmic --log \
@@ -137,7 +137,8 @@ jobs:
       - configure_bgp
     steps:
       - run: |
-          gnmic -a clab-nanog83-spine1,clab-nanog83-spine2,clab-nanog83-spine3,clab-nanog83-spine4 \
+          gnmic --log \
+          -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
           --tls-ca clab-nanog83/ca/root/root-ca.pem \
           -u admin \
           -p admin \
