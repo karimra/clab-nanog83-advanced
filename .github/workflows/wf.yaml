@@ -19,7 +19,10 @@ jobs:
     runs-on: 
       - self-hosted
       - kss
+    needs:
+      - install_containerlab
+      - install_gnmic
     steps:
       - uses: actions/checkout@v2
       - run: pwd
-      - run: sudo ./run.sh
+      - run: sudo bash run.sh
