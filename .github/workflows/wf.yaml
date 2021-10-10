@@ -25,6 +25,7 @@ jobs:
       - install_containerlab
       - install_gnmic
     steps:
+      - run: sudo clab destroy -t nanog83.clab.yaml --cleanup
       - uses: actions/checkout@v2
       - run: sudo clab deploy -t nanog83.clab.yaml --reconfigure
   
@@ -115,8 +116,7 @@ jobs:
       - self-hosted
       - kss
     needs:
-      - configure_subinterfaces
-      - configure_routing_policy
+      - configure_network_instance
     steps:
       - run: |
           gnmic --log \
