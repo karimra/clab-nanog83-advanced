@@ -15,3 +15,11 @@ jobs:
       - kss
     steps:
       - run: bash -c "$(curl -sL https://get-gnmic.kmrd.dev)"
+  checkout:
+    runs-on: 
+      - self-hosted
+      - kss
+    steps:
+      - uses: actions/checkout@v2
+      - run: pwd
+      - run: sudo ./run.sh
