@@ -116,7 +116,7 @@ clab-nanog83-super-spine2:
       router-id: "30.2.1.1"
       type: default
 
-clab-nanog83-spine1:
+clab-nanog83-spine11:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -196,7 +196,7 @@ clab-nanog83-spine1:
       router-id: "20.1.1.1"
       type: default
 
-clab-nanog83-spine2:
+clab-nanog83-spine12:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -276,7 +276,7 @@ clab-nanog83-spine2:
       router-id: "20.2.1.1"
       type: default
 
-clab-nanog83-spine3:     
+clab-nanog83-spine21:     
   network-instances:
     - name: "default"
       admin-state: enable
@@ -356,7 +356,7 @@ clab-nanog83-spine3:
       router-id: "20.3.1.1"
       type: default
 
-clab-nanog83-spine4:       
+clab-nanog83-spine22:       
   network-instances:
     - name: "default"
       admin-state: enable
@@ -436,7 +436,7 @@ clab-nanog83-spine4:
       router-id: "20.4.1.1"
       type: default
 
-clab-nanog83-leaf1:
+clab-nanog83-leaf11:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -477,7 +477,7 @@ clab-nanog83-leaf1:
       router-id: "10.1.1.1"
       type: default
 
-clab-nanog83-leaf2:
+clab-nanog83-leaf12:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -518,7 +518,7 @@ clab-nanog83-leaf2:
       router-id: "10.2.1.1"
       type: default
 
-clab-nanog83-leaf3:
+clab-nanog83-leaf13:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -559,7 +559,7 @@ clab-nanog83-leaf3:
       router-id: "10.3.1.1"
       type: default
 
-clab-nanog83-leaf4:
+clab-nanog83-leaf14:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -600,7 +600,7 @@ clab-nanog83-leaf4:
       router-id: "10.4.1.1"
       type: default
         
-clab-nanog83-leaf5:
+clab-nanog83-leaf21:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -641,7 +641,7 @@ clab-nanog83-leaf5:
       router-id: "10.5.1.1"
       type: default
         
-clab-nanog83-leaf6:
+clab-nanog83-leaf22:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -682,7 +682,7 @@ clab-nanog83-leaf6:
       router-id: "10.6.1.1"
       type: default
     
-clab-nanog83-leaf7:
+clab-nanog83-leaf23:
   network-instances:
     - name: "default"
       admin-state: enable
@@ -723,7 +723,7 @@ clab-nanog83-leaf7:
       router-id: "10.7.1.1"
       type: default
 
-clab-nanog83-leaf8:
+clab-nanog83-leaf24:
   network-instances:
     - name: "default"
       admin-state: enable

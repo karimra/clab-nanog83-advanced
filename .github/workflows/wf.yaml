@@ -140,12 +140,12 @@ jobs:
       - configure_bgp
     steps:
       - run: |
-          gnmic --log \
-          -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
-          --tls-ca clab-nanog83/ca/root/root-ca.pem \
-          -u admin \
-          -p admin \
-          -e ascii \
-          --format flat \
-          get \
-          --path /network-instance[name=default]/protocols/bgp/oper-state
+          sleep 5
+          for node in $(docker ps -f label=clab-node-kind=srl --format {{.Names}})
+          do 
+            bgp_state=$(gnmic -a $node --tls-ca clab-nanog83/ca/root/root-ca.pem -u admin -p admin -e ascii --format flat get --path /network-instance[name=default]/protocols/bgp/oper-state | awk '{print $NF}')
+            echo "$(date): BGP state of $node is $bgp_state"
+            if [ $bgp_state != "up" ]; then 
+              exit 1
+            fi
+          done

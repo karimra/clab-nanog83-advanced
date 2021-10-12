@@ -78,12 +78,22 @@ gnmic --log \
       --request-file config/3.network-instance/network_instance_bgp_template.gotmpl \
       --request-vars config/3.network-instance/network_instance_template_vars.yaml
 
+sleep 5
+
+for node in $(docker ps -f label=clab-node-kind=srl --format {{.Names}})
+do 
+  bgp_state=$(gnmic -a $node --tls-ca clab-nanog83/ca/root/root-ca.pem -u admin -p admin -e ascii --format flat get --path /network-instance[name=default]/protocols/bgp/oper-state | awk '{print $NF}')
+  echo "$(date): BGP state of $node is $bgp_state"
+  if [ $bgp_state != "up" ]; then 
+    exit 1
+  fi
+done
 # watch bgp peers
 while true
 do 
 echo ""
 echo "$(date)"
-gnmic -a clab-nanog83-spine1,clab-nanog83-spine2,clab-nanog83-spine3,clab-nanog83-spine4 \
+gnmic -a clab-nanog83-spine11,clab-nanog83-spine12,clab-nanog83-spine21,clab-nanog83-spine22 \
       --tls-ca clab-nanog83/ca/root/root-ca.pem \
       -u admin \
       -p admin \

@@ -2,25 +2,25 @@ clab-nanog83-super-spine1:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine1_1/1
+      description: to_spine11_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 2.1.1.0/31
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine2_1/1
+      description: to_spine12_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 2.1.2.0/31
     - name: ethernet-1/3
       admin-state: enable
-      description: to_spine3_1/1
+      description: to_spine21_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 2.1.3.0/31
     - name: ethernet-1/4
       admin-state: enable
-      description: to_spine4_1/1
+      description: to_spine22_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 2.1.4.0/31
@@ -35,25 +35,25 @@ clab-nanog83-super-spine2:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine1_1/2
+      description: to_spine11_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 2.2.1.0/31
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine2_1/2
+      description: to_spine12_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 2.2.2.0/31
     - name: ethernet-1/3
       admin-state: enable
-      description: to_spine3_1/2
+      description: to_spine21_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 2.2.3.0/31
     - name: ethernet-1/4
       admin-state: enable
-      description: to_spine4_1/2
+      description: to_spine22_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 2.2.4.0/31
@@ -64,7 +64,7 @@ clab-nanog83-super-spine2:
         - admin-state: enable
           ipv4-address: 30.2.1.1/32
 
-clab-nanog83-spine1:
+clab-nanog83-spine11:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
@@ -82,28 +82,28 @@ clab-nanog83-spine1:
 
     - name: ethernet-1/3
       admin-state: enable
-      description: to_leaf1_1/1
+      description: to_leaf11_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 1.1.1.1/31
 
     - name: ethernet-1/4
       admin-state: enable
-      description: to_leaf2_1/1
+      description: to_leaf12_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 1.1.2.1/31
 
     - name: ethernet-1/5
       admin-state: enable
-      description: to_leaf3_1/1
+      description: to_leaf13_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 1.1.3.1/31
 
     - name: ethernet-1/6
       admin-state: enable
-      description: to_leaf4_1/1
+      description: to_leaf14_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 1.1.4.1/31
@@ -115,7 +115,7 @@ clab-nanog83-spine1:
         - admin-state: enable
           ipv4-address: 20.1.1.1/32
 
-clab-nanog83-spine2:
+clab-nanog83-spine12:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
@@ -133,28 +133,28 @@ clab-nanog83-spine2:
 
     - name: ethernet-1/3
       admin-state: enable
-      description: to_leaf1_1/2
+      description: to_leaf11_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.2.1.1/31
 
     - name: ethernet-1/4
       admin-state: enable
-      description: to_leaf2_1/2
+      description: to_leaf12_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.2.2.1/31
 
     - name: ethernet-1/5
       admin-state: enable
-      description: to_leaf3_1/2
+      description: to_leaf13_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.2.3.1/31
 
     - name: ethernet-1/6
       admin-state: enable
-      description: to_leaf4_1/2
+      description: to_leaf14_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.2.4.1/31
@@ -166,7 +166,7 @@ clab-nanog83-spine2:
         - admin-state: enable
           ipv4-address: 20.2.1.1/32
 
-clab-nanog83-spine3:
+clab-nanog83-spine21:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
@@ -184,28 +184,28 @@ clab-nanog83-spine3:
 
     - name: ethernet-1/3
       admin-state: enable
-      description: to_leaf5_1/3
+      description: to_leaf21_1/3
       subinterface:
         - admin-state: enable
           ipv4-address: 1.3.5.1/31
 
     - name: ethernet-1/4
       admin-state: enable
-      description: to_leaf6_1/3
+      description: to_leaf22_1/3
       subinterface:
         - admin-state: enable
           ipv4-address: 1.3.6.1/31
 
     - name: ethernet-1/5
       admin-state: enable
-      description: to_leaf7_1/3
+      description: to_leaf23_1/3
       subinterface:
         - admin-state: enable
           ipv4-address: 1.3.7.1/31
 
     - name: ethernet-1/6
       admin-state: enable
-      description: to_leaf8_1/3
+      description: to_leaf24_1/3
       subinterface:
         - admin-state: enable
           ipv4-address: 1.3.8.1/31
@@ -217,7 +217,7 @@ clab-nanog83-spine3:
         - admin-state: enable
           ipv4-address: 20.3.1.1/32
 
-clab-nanog83-spine4:
+clab-nanog83-spine22:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
@@ -235,28 +235,28 @@ clab-nanog83-spine4:
 
     - name: ethernet-1/3
       admin-state: enable
-      description: to_leaf5_1/4
+      description: to_leaf21_1/4
       subinterface:
         - admin-state: enable
           ipv4-address: 1.4.5.1/31
 
     - name: ethernet-1/4
       admin-state: enable
-      description: to_leaf6_1/4
+      description: to_leaf22_1/4
       subinterface:
         - admin-state: enable
           ipv4-address: 1.4.6.1/31
 
     - name: ethernet-1/5
       admin-state: enable
-      description: to_leaf7_1/4
+      description: to_leaf23_1/4
       subinterface:
         - admin-state: enable
           ipv4-address: 1.4.7.1/31
 
     - name: ethernet-1/6
       admin-state: enable
-      description: to_leaf8_1/4
+      description: to_leaf24_1/4
       subinterface:
         - admin-state: enable
           ipv4-address: 1.4.8.1/31
@@ -268,18 +268,18 @@ clab-nanog83-spine4:
         - admin-state: enable
           ipv4-address: 20.4.1.1/32
 
-clab-nanog83-leaf1:
+clab-nanog83-leaf11:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine1_1/3
+      description: to_spine11_1/3
       subinterface:
         - admin-state: enable
           ipv4-address: 1.1.1.0/31
 
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine2_1/3
+      description: to_spine12_1/3
       subinterface:
         - admin-state: enable
           ipv4-address: 1.2.1.0/31
@@ -291,18 +291,18 @@ clab-nanog83-leaf1:
         - admin-state: enable
           ipv4-address: 10.1.1.1/32
 
-clab-nanog83-leaf2:
+clab-nanog83-leaf12:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine1_1/4
+      description: to_spine11_1/4
       subinterface:
         - admin-state: enable
           ipv4-address: 1.1.2.0/31
 
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine2_1/4
+      description: to_spine12_1/4
       subinterface:
         - admin-state: enable
           ipv4-address: 1.2.2.0/31
@@ -314,7 +314,7 @@ clab-nanog83-leaf2:
         - admin-state: enable
           ipv4-address: 10.2.1.1/32
 
-clab-nanog83-leaf3:
+clab-nanog83-leaf13:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
@@ -336,18 +336,18 @@ clab-nanog83-leaf3:
         - admin-state: enable
           ipv4-address: 10.3.1.1/32
   
-clab-nanog83-leaf4:
+clab-nanog83-leaf14:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine1_1/6
+      description: to_spine11_1/6
       subinterface:
         - admin-state: enable
           ipv4-address: 1.1.4.0/31
 
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine2_1/6
+      description: to_spine12_1/6
       subinterface:
         - admin-state: enable
           ipv4-address: 1.2.4.0/31
@@ -358,18 +358,18 @@ clab-nanog83-leaf4:
         - admin-state: enable
           ipv4-address: 10.4.1.1/32
        
-clab-nanog83-leaf5:
+clab-nanog83-leaf21:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine3_1/1
+      description: to_spine21_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 1.3.5.0/31
 
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine4_1/1
+      description: to_spine22_1/1
       subinterface:
         - admin-state: enable
           ipv4-address: 1.4.5.0/31
@@ -380,18 +380,18 @@ clab-nanog83-leaf5:
         - admin-state: enable
           ipv4-address: 10.5.1.1/32
        
-clab-nanog83-leaf6:
+clab-nanog83-leaf22:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine3_1/2
+      description: to_spine21_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.3.6.0/31
 
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine4_1/2
+      description: to_spine22_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.4.6.0/31
@@ -403,18 +403,18 @@ clab-nanog83-leaf6:
         - admin-state: enable
           ipv4-address: 10.6.1.1/32
     
-clab-nanog83-leaf7:
+clab-nanog83-leaf23:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine3_1/2
+      description: to_spine21_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.3.7.0/31
 
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine4_1/2
+      description: to_spine22_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.4.7.0/31
@@ -426,18 +426,18 @@ clab-nanog83-leaf7:
         - admin-state: enable
           ipv4-address: 10.7.1.1/32
 
-clab-nanog83-leaf8:
+clab-nanog83-leaf24:
   interfaces:
     - name: ethernet-1/1
       admin-state: enable
-      description: to_spine3_1/2
+      description: to_spine21_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.3.8.0/31
 
     - name: ethernet-1/2
       admin-state: enable
-      description: to_spine4_1/2
+      description: to_spine22_1/2
       subinterface:
         - admin-state: enable
           ipv4-address: 1.4.8.0/31
