@@ -8,7 +8,7 @@ set -e
 sudo clab deploy -t nanog83.clab.yaml --reconfigure #--max-workers 4
 
 # get SR Linux Nodes names and join them with a comma
-srl_nodes=$(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -)
+srl_nodes=$(docker ps -f label=containerlab=nanog83 -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -)
 echo $srl_nodes
 
 # configure interfaces via gNMI 
