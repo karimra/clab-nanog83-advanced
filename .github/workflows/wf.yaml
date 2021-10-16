@@ -46,7 +46,7 @@ jobs:
                 -u admin \
                 -p admin \
                 -e json_ietf \
-                set \ 
+                set \
                 --request-file config/1.interfaces/interfaces_template.gotmpl \
                 --request-vars config/1.interfaces/interfaces_template_vars.yaml
   
@@ -64,7 +64,7 @@ jobs:
                 -u admin \
                 -p admin \
                 -e json_ietf \
-                set \ 
+                set \
                 --request-file config/1.interfaces/subinterfaces_template.gotmpl \
                 --request-vars config/1.interfaces/interfaces_template_vars.yaml
 
@@ -82,7 +82,7 @@ jobs:
                 -u admin \
                 -p admin \
                 -e json_ietf \
-                set \ 
+                set \
                 --request-file config/2.routing-policy/routing_policy_prefix_set_template.gotmpl \
                 --request-vars config/2.routing-policy/routing_policy_vars.yaml
           gnmic --log \
@@ -91,7 +91,7 @@ jobs:
                 -u admin \
                 -p admin \
                 -e json_ietf \
-                set \ 
+                set \
                 --request-file config/2.routing-policy/routing_policy_policy_template.gotmpl \
                 --request-vars config/2.routing-policy/routing_policy_vars.yaml
 
@@ -110,7 +110,7 @@ jobs:
                 -u admin \
                 -p admin \
                 -e json_ietf \
-                set \ 
+                set \
                 --request-file config/3.network-instance/network_instance_template.gotmpl \
                 --request-vars config/3.network-instance/network_instance_template_vars.yaml
 
@@ -128,7 +128,7 @@ jobs:
                 -u admin \
                 -p admin \
                 -e json_ietf \
-                set \ 
+                set \
                 --request-file config/3.network-instance/network_instance_bgp_template.gotmpl \
                 --request-vars config/3.network-instance/network_instance_template_vars.yaml
   
