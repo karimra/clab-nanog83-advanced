@@ -5,6 +5,15 @@ on:
     tags:
       - v*
 
+env:
+  GNMIC_CMD: |
+    gnmic --log \
+          -a $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 --format {{.Names}} | paste -s -d, -) \
+          --tls-ca clab-nanog83/ca/root/root-ca.pem \
+          -u admin \
+          -p admin \
+          -e json_ietf
+
 jobs:
   install_containerlab:
     runs-on: 
@@ -40,15 +49,8 @@ jobs:
       - deploy_lab
     steps:
       - run: |
-          gnmic --log \
-                -a $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 --format {{.Names}} | paste -s -d, -) \
-                --tls-ca clab-nanog83/ca/root/root-ca.pem \
-                -u admin \
-                -p admin \
-                -e json_ietf \
-                set \
-                --request-file config/1.interfaces/interfaces_template.gotmpl \
-                --request-vars config/1.interfaces/interfaces_template_vars.yaml
+          ${GNMIC_CMD} --request-file config/1.interfaces/interfaces_template.gotmpl \
+                       --request-vars config/1.interfaces/interfaces_template_vars.yaml
   
   configure_subinterfaces:
     runs-on: 
@@ -58,15 +60,9 @@ jobs:
       - configure_interfaces
     steps:
       - run: |
-          gnmic --log \
-                -a $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 --format {{.Names}} | paste -s -d, -) \
-                --tls-ca clab-nanog83/ca/root/root-ca.pem \
-                -u admin \
-                -p admin \
-                -e json_ietf \
-                set \
-                --request-file config/1.interfaces/subinterfaces_template.gotmpl \
-                --request-vars config/1.interfaces/interfaces_template_vars.yaml
+          ${GNMIC_CMD} set \
+                       --request-file config/1.interfaces/subinterfaces_template.gotmpl \
+                       --request-vars config/1.interfaces/interfaces_template_vars.yaml
 
   configure_routing_policy:
     runs-on: 
@@ -76,24 +72,12 @@ jobs:
       - deploy_lab
     steps:
       - run: |
-          gnmic --log \
-                -a $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 --format {{.Names}} | paste -s -d, -) \
-                --tls-ca clab-nanog83/ca/root/root-ca.pem \
-                -u admin \
-                -p admin \
-                -e json_ietf \
-                set \
-                --request-file config/2.routing-policy/routing_policy_prefix_set_template.gotmpl \
-                --request-vars config/2.routing-policy/routing_policy_vars.yaml
-          gnmic --log \
-                -a $(docker ps -f label=clab-node-kind=srl --format {{.Names}} | paste -s -d, -) \
-                --tls-ca clab-nanog83/ca/root/root-ca.pem \
-                -u admin \
-                -p admin \
-                -e json_ietf \
-                set \
-                --request-file config/2.routing-policy/routing_policy_policy_template.gotmpl \
-                --request-vars config/2.routing-policy/routing_policy_vars.yaml
+          ${GNMIC_CMD} set \
+                       --request-file config/2.routing-policy/routing_policy_prefix_set_template.gotmpl \
+                       --request-vars config/2.routing-policy/routing_policy_vars.yaml
+          ${GNMIC_CMD} set \
+                       --request-file config/2.routing-policy/routing_policy_policy_template.gotmpl \
+                       --request-vars config/2.routing-policy/routing_policy_vars.yaml
 
   configure_network_instance:
     runs-on: 
@@ -104,15 +88,9 @@ jobs:
       - configure_routing_policy
     steps:
       - run: |
-          gnmic --log \
-                -a $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 --format {{.Names}} | paste -s -d, -) \
-                --tls-ca clab-nanog83/ca/root/root-ca.pem \
-                -u admin \
-                -p admin \
-                -e json_ietf \
-                set \
-                --request-file config/3.network-instance/network_instance_template.gotmpl \
-                --request-vars config/3.network-instance/network_instance_template_vars.yaml
+          ${GNMIC_CMD} set \
+                       --request-file config/3.network-instance/network_instance_template.gotmpl \
+                       --request-vars config/3.network-instance/network_instance_template_vars.yaml
 
   configure_bgp:
     runs-on: 
@@ -122,15 +100,9 @@ jobs:
       - configure_network_instance
     steps:
       - run: |
-          gnmic --log \
-                -a $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 --format {{.Names}} | paste -s -d, -) \
-                --tls-ca clab-nanog83/ca/root/root-ca.pem \
-                -u admin \
-                -p admin \
-                -e json_ietf \
-                set \
-                --request-file config/3.network-instance/network_instance_bgp_template.gotmpl \
-                --request-vars config/3.network-instance/network_instance_template_vars.yaml
+          ${GNMIC_CMD} set \
+                       --request-file config/3.network-instance/network_instance_bgp_template.gotmpl \
+                       --request-vars config/3.network-instance/network_instance_template_vars.yaml
   
   check_bgp_status:
     runs-on: 
