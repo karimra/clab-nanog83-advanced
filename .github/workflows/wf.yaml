@@ -49,7 +49,8 @@ jobs:
       - deploy_lab
     steps:
       - run: |
-          ${GNMIC_CMD} --request-file config/1.interfaces/interfaces_template.gotmpl \
+          ${GNMIC_CMD} set \ 
+                       --request-file config/1.interfaces/interfaces_template.gotmpl \
                        --request-vars config/1.interfaces/interfaces_template_vars.yaml
   
   configure_subinterfaces:
