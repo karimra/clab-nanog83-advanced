@@ -1,9 +1,10 @@
-# clab-nanog83
+# clab-nanog83-advanced
 
-A Containerlab advanced example.
+A Containerlab advanced example presented at NANOG83.
 
 Deploy with:
 
 ```bash
-bash run.sh
+chmod +x run.sh
+./run.sh
 ```
