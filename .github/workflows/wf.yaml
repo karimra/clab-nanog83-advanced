@@ -29,7 +29,6 @@ jobs:
       - install_gnmic
     steps:
       - uses: actions/checkout@v2
-      - run: sudo clab destroy -t nanog83.clab.yaml --cleanup
       - run: sudo clab deploy -t nanog83.clab.yaml --reconfigure
   
   configure_interfaces:
