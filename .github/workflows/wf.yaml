@@ -83,14 +83,6 @@ jobs:
                 -e json_ietf \
                 set \
                 --request-file config/2.routing-policy/routing_policy_prefix_set_template.gotmpl \
-                --request-vars config/2.routing-policy/routing_policy_vars.yaml
-          gnmic --log \
-                -a $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 --format {{.Names}} | paste -s -d, -) \
-                --tls-ca clab-nanog83/ca/root/root-ca.pem \
-                -u admin \
-                -p admin \
-                -e json_ietf \
-                set \
                 --request-file config/2.routing-policy/routing_policy_policy_template.gotmpl \
                 --request-vars config/2.routing-policy/routing_policy_vars.yaml
 

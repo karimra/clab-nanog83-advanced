@@ -13,7 +13,7 @@ topology:
       type: ixr6
     super-spine2:
       type: ixr6
-    
+
     spine11:
     spine12:
     spine21:
@@ -52,8 +52,8 @@ topology:
         - ./gnmic.yaml:/app/gnmic.yaml:ro
         - /var/run/docker.sock:/var/run/docker.sock
       ports:
-        - 7890:7890
-        - 9804:9804
+        - 7890:7890 # gnmic API port
+        - 9804:9804 # prometheus output endpoint
       env:
         GNMIC_API: :7890
         GNMIC_CLUSTERING_INSTANCE_NAME: clab-nanog83-gnmic1
@@ -68,8 +68,8 @@ topology:
         - ./gnmic.yaml:/app/gnmic.yaml:ro
         - /var/run/docker.sock:/var/run/docker.sock
       ports:
-        - 7891:7891
-        - 9805:9805
+        - 7891:7891 # gnmic API port
+        - 9805:9805 # prometheus output endpoint
       env:
         GNMIC_API: :7891
         GNMIC_CLUSTERING_INSTANCE_NAME: clab-nanog83-gnmic2
@@ -84,8 +84,8 @@ topology:
         - ./gnmic.yaml:/app/gnmic.yaml:ro
         - /var/run/docker.sock:/var/run/docker.sock
       ports:
-        - 7892:7892
-        - 9806:9806
+        - 7892:7892 # gnmic API port
+        - 9806:9806 # prometheus output endpoint
       env:
         GNMIC_API: :7892
         GNMIC_CLUSTERING_INSTANCE_NAME: clab-nanog83-gnmic3
@@ -158,14 +158,14 @@ topology:
     - endpoints: ["spine22:e1-5", "leaf23:e1-2"]
     - endpoints: ["spine22:e1-6", "leaf24:e1-2"]
     # client1 links
-    - endpoints: ["leaf11:e1-36", "client1:eth1"]
-    - endpoints: ["leaf12:e1-36", "client1:eth2"]
+    - endpoints: ["leaf11:e1-48", "client1:eth1"]
+    - endpoints: ["leaf12:e1-48", "client1:eth2"]
     # client2 links
-    - endpoints: ["leaf13:e1-36", "client2:eth1"]
-    - endpoints: ["leaf14:e1-36", "client2:eth2"]
+    - endpoints: ["leaf13:e1-48", "client2:eth1"]
+    - endpoints: ["leaf14:e1-48", "client2:eth2"]
     # client3 links
-    - endpoints: ["leaf21:e1-36", "client3:eth1"]
-    - endpoints: ["leaf22:e1-36", "client3:eth2"]
+    - endpoints: ["leaf21:e1-48", "client3:eth1"]
+    - endpoints: ["leaf22:e1-48", "client3:eth2"]
     # client4 links
-    - endpoints: ["leaf23:e1-36", "client4:eth1"]
-    - endpoints: ["leaf24:e1-36", "client4:eth2"]
+    - endpoints: ["leaf23:e1-48", "client4:eth1"]
+    - endpoints: ["leaf24:e1-48", "client4:eth2"]
