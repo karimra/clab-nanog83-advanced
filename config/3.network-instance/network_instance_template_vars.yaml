@@ -1,7 +1,7 @@
 clab-nanog83-super-spine1:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
@@ -10,57 +10,57 @@ clab-nanog83-super-spine1:
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65001"
+          admin_state: enable
+          autonomous_system: "65001"
           group:
-          - admin-state: enable
-            group-name: "spines"
-            timer-connect-retry: 10
-          ipv4-unicast:
+          - admin_state: enable
+            group_name: "spines"
+            timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              max_paths-level_1: "32"
+              max_paths-level_2: "32"
           neighbor:
-          - admin-state: enable
-            export-policy: export-loopbacks
-            failure-detection:
-              enable-bfd: "true"
-              fast-failover: "true"
-            peer-address: "2.1.1.1" # key TODO:
-            peer-as: "65010" # spine pod1
-            peer-group: "spines"
-          - admin-state: enable
-            export-policy: export-loopbacks
-            failure-detection:
-              enable-bfd: "true"
-              fast-failover: "true"
-            peer-address: "2.1.2.1" # key TODO:
-            peer-as: "65010" # spine pod1
-            peer-group: "spines"
-          - admin-state: enable
-            export-policy: export-loopbacks
-            failure-detection:
-              enable-bfd: "true"
-              fast-failover: "true"
-            peer-address: "2.1.3.1" # key TODO:
-            peer-as: "65020" # spine pod2
-            peer-group: "spines"
-          - admin-state: enable
-            export-policy: export-loopbacks
-            failure-detection:
-              enable-bfd: "true"
-              fast-failover: "true"
-            peer-address: "2.1.4.1" # key TODO:
-            peer-as: "65020" # spine pod2
-            peer-group: "spines"
-          router-id: "30.1.1.1"
-      router-id: "30.1.1.1"
+          - admin_state: enable
+            export_policy: export-loopbacks
+            failure_detection:
+              enable_bfd: "true"
+              fast_failover: "true"
+            peer_address: "2.1.1.1" # key TODO:
+            peer_as: "65010" # spine pod1
+            peer_group: "spines"
+          - admin_state: enable
+            export_policy: export-loopbacks
+            failure_detection:
+              enable_bfd: "true"
+              fast_failover: "true"
+            peer_address: "2.1.2.1" # key TODO:
+            peer_as: "65010" # spine pod1
+            peer_group: "spines"
+          - admin_state: enable
+            export_policy: export-loopbacks
+            failure_detection:
+              enable_bfd: "true"
+              fast_failover: "true"
+            peer_address: "2.1.3.1" # key TODO:
+            peer_as: "65020" # spine pod2
+            peer_group: "spines"
+          - admin_state: enable
+            export_policy: export-loopbacks
+            failure_detection:
+              enable_bfd: "true"
+              fast_failover: "true"
+            peer_address: "2.1.4.1" # key TODO:
+            peer_as: "65020" # spine pod2
+            peer_group: "spines"
+          router_id: "30.1.1.1"
+      router_id: "30.1.1.1"
       type: default
 
 clab-nanog83-super-spine2:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
@@ -69,57 +69,57 @@ clab-nanog83-super-spine2:
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65001"
+          admin_state: enable
+          autonomous_system: "65001"
           group:
-          - admin-state: enable
-            group-name: "spines"
-            timer-connect-retry: 10
-          ipv4-unicast:
+          - admin_state: enable
+            group_name: "spines"
+            timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-          - admin-state: enable
-            export-policy: export-loopbacks
-            failure-detection:
-              enable-bfd: "true"
-              fast-failover: "true"
-            peer-address: "2.2.1.1" # key TODO:
-            peer-as: "65010" # spine pod1
-            peer-group: "spines"
-          - admin-state: enable
-            export-policy: export-loopbacks
-            failure-detection:
-              enable-bfd: "true"
-              fast-failover: "true"
-            peer-address: "2.2.2.1" # key TODO:
-            peer-as: "65010" # spine pod1
-            peer-group: "spines"
-          - admin-state: enable
-            export-policy: export-loopbacks
-            failure-detection:
-              enable-bfd: "true"
-              fast-failover: "true"
-            peer-address: "2.2.3.1" # key TODO:
-            peer-as: "65020" # spine pod2
-            peer-group: "spines"
-          - admin-state: enable
-            export-policy: export-loopbacks
-            failure-detection:
-              enable-bfd: "true"
-              fast-failover: "true"
-            peer-address: "2.2.4.1" # key TODO:
-            peer-as: "65020" # spine pod2
-            peer-group: "spines"
-          router-id: "30.2.1.1"
-      router-id: "30.2.1.1"
+          - admin_state: enable
+            export_policy: export-loopbacks
+            failure_detection:
+              enable_bfd: "true"
+              fast_failover: "true"
+            peer_address: "2.2.1.1" # key TODO:
+            peer_as: "65010" # spine pod1
+            peer_group: "spines"
+          - admin_state: enable
+            export_policy: export-loopbacks
+            failure_detection:
+              enable_bfd: "true"
+              fast_failover: "true"
+            peer_address: "2.2.2.1" # key TODO:
+            peer_as: "65010" # spine pod1
+            peer_group: "spines"
+          - admin_state: enable
+            export_policy: export-loopbacks
+            failure_detection:
+              enable_bfd: "true"
+              fast_failover: "true"
+            peer_address: "2.2.3.1" # key TODO:
+            peer_as: "65020" # spine pod2
+            peer_group: "spines"
+          - admin_state: enable
+            export_policy: export-loopbacks
+            failure_detection:
+              enable_bfd: "true"
+              fast_failover: "true"
+            peer_address: "2.2.4.1" # key TODO:
+            peer_as: "65020" # spine pod2
+            peer_group: "spines"
+          router_id: "30.2.1.1"
+      router_id: "30.2.1.1"
       type: default
 
 clab-nanog83-spine11:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
@@ -130,76 +130,76 @@ clab-nanog83-spine11:
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65010"
+          admin_state: enable
+          autonomous_system: "65010"
           group:
-            - admin-state: enable
-              group-name: "super-spines"
-              timer-connect-retry: 10
-            - admin-state: enable
-              group-name: "leaves"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "super-spines"
+              timer_connect_retry: 10
+            - admin_state: enable
+              group_name: "leaves"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "2.1.1.0"
-              peer-as: "65001"
-              peer-group: "super-spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "2.2.1.0"
-              peer-as: "65001"
-              peer-group: "super-spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.1.1.0"
-              peer-as: "65011"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.1.2.0"
-              peer-as: "65012"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.1.3.0"
-              peer-as: "65013"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.1.4.0"
-              peer-as: "65014"
-              peer-group: "leaves"
-          router-id: "20.1.1.1"
-      router-id: "20.1.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "2.1.1.0"
+              peer_as: "65001"
+              peer_group: "super-spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "2.2.1.0"
+              peer_as: "65001"
+              peer_group: "super-spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.1.1.0"
+              peer_as: "65011"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.1.2.0"
+              peer_as: "65012"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.1.3.0"
+              peer_as: "65013"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.1.4.0"
+              peer_as: "65014"
+              peer_group: "leaves"
+          router_id: "20.1.1.1"
+      router_id: "20.1.1.1"
       type: default
 
 clab-nanog83-spine12:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
@@ -210,76 +210,76 @@ clab-nanog83-spine12:
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65010"
+          admin_state: enable
+          autonomous_system: "65010"
           group:
-            - admin-state: enable
-              group-name: "super-spines"
-              timer-connect-retry: 10
-            - admin-state: enable
-              group-name: "leaves"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "super-spines"
+              timer_connect_retry: 10
+            - admin_state: enable
+              group_name: "leaves"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "2.1.2.0"
-              peer-as: "65001"
-              peer-group: "super-spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "2.2.2.0"
-              peer-as: "65001"
-              peer-group: "super-spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.2.1.0"
-              peer-as: "65011"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.2.2.0"
-              peer-as: "65012"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.2.3.0"
-              peer-as: "65013"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.2.4.0"
-              peer-as: "65014"
-              peer-group: "leaves"
-          router-id: "20.2.1.1"
-      router-id: "20.2.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "2.1.2.0"
+              peer_as: "65001"
+              peer_group: "super-spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "2.2.2.0"
+              peer_as: "65001"
+              peer_group: "super-spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.2.1.0"
+              peer_as: "65011"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.2.2.0"
+              peer_as: "65012"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.2.3.0"
+              peer_as: "65013"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.2.4.0"
+              peer_as: "65014"
+              peer_group: "leaves"
+          router_id: "20.2.1.1"
+      router_id: "20.2.1.1"
       type: default
 
 clab-nanog83-spine21:     
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
@@ -290,76 +290,76 @@ clab-nanog83-spine21:
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65020"
+          admin_state: enable
+          autonomous_system: "65020"
           group:
-            - admin-state: enable
-              group-name: "super-spines"
-              timer-connect-retry: 10
-            - admin-state: enable
-              group-name: "leaves"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "super-spines"
+              timer_connect_retry: 10
+            - admin_state: enable
+              group_name: "leaves"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "2.1.3.0"
-              peer-as: "65001"
-              peer-group: "super-spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "2.2.3.0"
-              peer-as: "65001"
-              peer-group: "super-spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.3.5.0"
-              peer-as: "65025"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.3.6.0"
-              peer-as: "65026"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.3.7.0"
-              peer-as: "65027"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.3.8.0"
-              peer-as: "65028"
-              peer-group: "leaves"
-          router-id: "20.3.1.1"
-      router-id: "20.3.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "2.1.3.0"
+              peer_as: "65001"
+              peer_group: "super-spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "2.2.3.0"
+              peer_as: "65001"
+              peer_group: "super-spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.3.5.0"
+              peer_as: "65025"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.3.6.0"
+              peer_as: "65026"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.3.7.0"
+              peer_as: "65027"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.3.8.0"
+              peer_as: "65028"
+              peer_group: "leaves"
+          router_id: "20.3.1.1"
+      router_id: "20.3.1.1"
       type: default
 
 clab-nanog83-spine22:       
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
@@ -370,396 +370,396 @@ clab-nanog83-spine22:
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65020"
+          admin_state: enable
+          autonomous_system: "65020"
           group:
-            - admin-state: enable
-              group-name: "super-spines"
-              timer-connect-retry: 10
-            - admin-state: enable
-              group-name: "leaves"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "super-spines"
+              timer_connect_retry: 10
+            - admin_state: enable
+              group_name: "leaves"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "2.1.4.0"
-              peer-as: "65001"
-              peer-group: "super-spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "2.2.4.0"
-              peer-as: "65001"
-              peer-group: "super-spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.4.5.0"
-              peer-as: "65025"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.4.6.0"
-              peer-as: "65026"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.4.7.0"
-              peer-as: "65027"
-              peer-group: "leaves"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.4.8.0"
-              peer-as: "65028"
-              peer-group: "leaves"
-          router-id: "20.4.1.1"
-      router-id: "20.4.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "2.1.4.0"
+              peer_as: "65001"
+              peer_group: "super-spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "2.2.4.0"
+              peer_as: "65001"
+              peer_group: "super-spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.4.5.0"
+              peer_as: "65025"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.4.6.0"
+              peer_as: "65026"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.4.7.0"
+              peer_as: "65027"
+              peer_group: "leaves"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.4.8.0"
+              peer_as: "65028"
+              peer_group: "leaves"
+          router_id: "20.4.1.1"
+      router_id: "20.4.1.1"
       type: default
 
 clab-nanog83-leaf11:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65011"
+          admin_state: enable
+          autonomous_system: "65011"
           group:
-            - admin-state: enable
-              group-name: "spines"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "spines"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.1.1.1"
-              peer-as: "65010"
-              peer-group: "spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.2.1.1"
-              peer-as: "65010"
-              peer-group: "spines"
-          router-id: "10.1.1.1"
-      router-id: "10.1.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.1.1.1"
+              peer_as: "65010"
+              peer_group: "spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.2.1.1"
+              peer_as: "65010"
+              peer_group: "spines"
+          router_id: "10.1.1.1"
+      router_id: "10.1.1.1"
       type: default
 
 clab-nanog83-leaf12:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65012"
+          admin_state: enable
+          autonomous_system: "65012"
           group:
-            - admin-state: enable
-              group-name: "spines"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "spines"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.1.2.1"
-              peer-as: "65010"
-              peer-group: "spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.2.2.1"
-              peer-as: "65010"
-              peer-group: "spines"
-          router-id: "10.2.1.1"
-      router-id: "10.2.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.1.2.1"
+              peer_as: "65010"
+              peer_group: "spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.2.2.1"
+              peer_as: "65010"
+              peer_group: "spines"
+          router_id: "10.2.1.1"
+      router_id: "10.2.1.1"
       type: default
 
 clab-nanog83-leaf13:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65013"
+          admin_state: enable
+          autonomous_system: "65013"
           group:
-            - admin-state: enable
-              group-name: "spines"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "spines"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.1.3.1"
-              peer-as: "65010"
-              peer-group: "spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.2.3.1"
-              peer-as: "65010"
-              peer-group: "spines"
-          router-id: "10.3.1.1"
-      router-id: "10.3.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.1.3.1"
+              peer_as: "65010"
+              peer_group: "spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.2.3.1"
+              peer_as: "65010"
+              peer_group: "spines"
+          router_id: "10.3.1.1"
+      router_id: "10.3.1.1"
       type: default
 
 clab-nanog83-leaf14:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65014"
+          admin_state: enable
+          autonomous_system: "65014"
           group:
-            - admin-state: enable
-              group-name: "spines"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "spines"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.1.4.1"
-              peer-as: "65010"
-              peer-group: "spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.2.4.1"
-              peer-as: "65010"
-              peer-group: "spines"
-          router-id: "10.4.1.1"
-      router-id: "10.4.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.1.4.1"
+              peer_as: "65010"
+              peer_group: "spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.2.4.1"
+              peer_as: "65010"
+              peer_group: "spines"
+          router_id: "10.4.1.1"
+      router_id: "10.4.1.1"
       type: default
         
 clab-nanog83-leaf21:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65025"
+          admin_state: enable
+          autonomous_system: "65025"
           group:
-            - admin-state: enable
-              group-name: "spines"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "spines"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.3.5.1"
-              peer-as: "65020"
-              peer-group: "spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.4.5.1"
-              peer-as: "65020"
-              peer-group: "spines"
-          router-id: "10.5.1.1"
-      router-id: "10.5.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.3.5.1"
+              peer_as: "65020"
+              peer_group: "spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.4.5.1"
+              peer_as: "65020"
+              peer_group: "spines"
+          router_id: "10.5.1.1"
+      router_id: "10.5.1.1"
       type: default
         
 clab-nanog83-leaf22:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65026"
+          admin_state: enable
+          autonomous_system: "65026"
           group:
-            - admin-state: enable
-              group-name: "spines"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "spines"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.3.6.1"
-              peer-as: "65020"
-              peer-group: "spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.4.6.1"
-              peer-as: "65020"
-              peer-group: "spines"
-          router-id: "10.6.1.1"
-      router-id: "10.6.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.3.6.1"
+              peer_as: "65020"
+              peer_group: "spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.4.6.1"
+              peer_as: "65020"
+              peer_group: "spines"
+          router_id: "10.6.1.1"
+      router_id: "10.6.1.1"
       type: default
     
 clab-nanog83-leaf23:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65027"
+          admin_state: enable
+          autonomous_system: "65027"
           group:
-            - admin-state: enable
-              group-name: "spines"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "spines"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.3.7.1"
-              peer-as: "65020"
-              peer-group: "spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.4.7.1"
-              peer-as: "65020"
-              peer-group: "spines"
-          router-id: "10.7.1.1"
-      router-id: "10.7.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.3.7.1"
+              peer_as: "65020"
+              peer_group: "spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.4.7.1"
+              peer_as: "65020"
+              peer_group: "spines"
+          router_id: "10.7.1.1"
+      router_id: "10.7.1.1"
       type: default
 
 clab-nanog83-leaf24:
-  network-instances:
+  network_instance:
     - name: "default"
-      admin-state: enable
+      admin_state: enable
       interfaces:
       - "ethernet-1/1.0"
       - "ethernet-1/2.0"
       - lo0.0
       protocols:
         bgp:
-          admin-state: enable
-          autonomous-system: "65028"
+          admin_state: enable
+          autonomous_system: "65028"
           group:
-            - admin-state: enable
-              group-name: "spines"
-              timer-connect-retry: 10
-          ipv4-unicast:
+            - admin_state: enable
+              group_name: "spines"
+              timer_connect_retry: 10
+          ipv4_unicast:
             multipath:
-              max-paths-level-1: "32"
-              max-paths-level-2: "32"
+              imax_paths_level_1: "32"
+              imax_paths_level_2: "32"
           neighbor:
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.3.8.1"
-              peer-as: "65020"
-              peer-group: "spines"
-            - admin-state: enable
-              export-policy: export-loopbacks
-              failure-detection:
-                enable-bfd: "true"
-                fast-failover: "true"
-              peer-address: "1.4.8.1"
-              peer-as: "65020"
-              peer-group: "spines"
-          router-id: "10.8.1.1"
-      router-id: "10.8.1.1"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.3.8.1"
+              peer_as: "65020"
+              peer_group: "spines"
+            - admin_state: enable
+              export_policy: export-loopbacks
+              failure_detection:
+                enable_bfd: "true"
+                fast_failover: "true"
+              peer_address: "1.4.8.1"
+              peer_as: "65020"
+              peer_group: "spines"
+          router_id: "10.8.1.1"
+      router_id: "10.8.1.1"
       type: default

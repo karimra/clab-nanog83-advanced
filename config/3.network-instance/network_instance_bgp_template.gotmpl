@@ -1,28 +1,29 @@
 updates:
-{{- range $netins := index .Vars .TargetName "network-instances" }}
-  {{- if $bgp := index $netins "protocols" "bgp" }}
-  - path: "/network-instance[name={{ index $netins "name" }}]/protocols/bgp"
+{{- $target := index .Vars .TargetName -}}
+{{- range $netins := $target.network_instance }}
+  {{- if $bgp := $netins.protocols.bgp }}
+  - path: "/network-instance[name={{ $netins.name }}]/protocols/bgp"
     value: 
-      admin-state: {{ index $bgp "admin-state" | default "disable" }}
-      autonomous-system: {{ index $bgp "autonomous-system" }}
-      router-id: {{ index $bgp "router-id" }}
+      admin-state: {{ $bgp.admin_state | default "disable" }}
+      autonomous-system: {{ $bgp.autonomous_system }}
+      router-id: {{ $bgp.router_id }}
       group:
-      {{- range $group := index $bgp "group" }}
-        - admin-state: {{ index $group "admin-state" }}
-          group-name: {{ index $group "group-name" }}
+      {{- range $group := $bgp.group }}
+        - admin-state: {{ $group.admin_state }}
+          group-name: {{ $group.group_name }}
           timers:
-            connect-retry: {{ index $group "timer-connect-retry" | default 120 }}
+            connect-retry: {{ $group.timer_connect_retry | default 120 }}
       {{- end }}
       neighbor:
-      {{- range $neighbor := index $bgp "neighbor" }}
-        - admin-state: {{ index $neighbor "admin-state" | default "enable" }}
-          export-policy: {{ index $neighbor "export-policy"}}
+      {{- range $neighbor := $bgp.neighbor }}
+        - admin-state: {{ $neighbor.admin_state | default "enable" }}
+          export-policy: {{ $neighbor.export_policy }}
           failure-detection:
             enable-bfd: "true"
             fast-failover: "true"
-          peer-address: {{ index $neighbor "peer-address" }}
-          peer-as: {{ index $neighbor "peer-as" }}
-          peer-group: {{ index $neighbor "peer-group" }}
+          peer-address: {{ $neighbor.peer_address }}
+          peer-as: {{ $neighbor.peer_as }}
+          peer-group: {{ $neighbor.peer_group }}
       {{- end }}
   {{- end }}    
 {{- end }}
