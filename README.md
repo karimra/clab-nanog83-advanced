@@ -23,4 +23,6 @@ bash run.sh
 
 ## Deploy via Github Actions
 
-The repo includes a github [workflow](https://github.com/karimra/clab-nanog83-advanced/blob/main/.github/workflows/wf.yaml) that deploys the lab on a self-hosted runner
+The repo includes a github [workflow](https://github.com/karimra/clab-nanog83-advanced/blob/main/.github/workflows/wf.yaml) that deploys the lab on a self-hosted runner.
+
+![lab-gh-actions](https://user-images.githubusercontent.com/12892894/138225607-35f3bad3-5e05-4f37-a74f-f0840029cf0c.png)
