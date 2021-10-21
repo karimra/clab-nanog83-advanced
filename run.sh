@@ -64,7 +64,7 @@ do
     printf "unexpected BGP state for node $node : ${bgp_state^^} (ノ ゜Д゜)ノ ︵ ┻━┻\n"
     exit 1
   fi
-  printf "$(date): \\U1F44D BGP state of $node is ${bgp_state^^} \n"
+  printf "$(date): \\U1F44D $node BGP state is ${bgp_state^^} \n"
 done
 
 printf "\n"
