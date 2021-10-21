@@ -15,9 +15,17 @@ topology:
       type: ixr6
 
     spine11:
+      labels:
+        is_spine: "true"
     spine12:
+      labels:
+        is_spine: "true"
     spine21:
+      labels:
+        is_spine: "true"
     spine22:
+      labels:
+        is_spine: "true"
 
     leaf11:
     leaf12:
