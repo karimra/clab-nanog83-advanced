@@ -283,7 +283,14 @@ clab-nanog83-leaf11:
       subinterface:
         - admin_state: enable
           ipv4_address: 1.2.1.0/31
-    
+
+    - name: ethernet-1/48
+      admin_state: enable
+      description: to_client1
+      # subinterface:
+      #   - admin_state: enable
+      #     ipv4_address: # configure IP towards client
+
     - name: lo0
       admin_state: enable
       description: loopback0
@@ -307,6 +314,13 @@ clab-nanog83-leaf12:
         - admin_state: enable
           ipv4_address: 1.2.2.0/31
 
+    - name: ethernet-1/48
+      admin_state: enable
+      description: to_client1
+      # subinterface:
+      #   - admin_state: enable
+      #     ipv4_address: # configure IP towards client
+
     - name: lo0
       admin_state: enable
       description: loopback0
@@ -329,6 +343,14 @@ clab-nanog83-leaf13:
       subinterface:
         - admin_state: enable
           ipv4_address: 1.2.3.0/31
+
+    - name: ethernet-1/48
+      admin_state: enable
+      description: to_client2
+      # subinterface:
+      #   - admin_state: enable
+      #     ipv4_address: # configure IP towards client
+
     - name: lo0
       admin_state: enable
       description: loopback0
@@ -351,6 +373,14 @@ clab-nanog83-leaf14:
       subinterface:
         - admin_state: enable
           ipv4_address: 1.2.4.0/31
+
+    - name: ethernet-1/48
+      admin_state: enable
+      description: to_client2
+      # subinterface:
+      #   - admin_state: enable
+      #     ipv4_address: # configure IP towards client
+      
     - name: lo0
       admin_state: enable
       description: loopback0
@@ -373,6 +403,14 @@ clab-nanog83-leaf21:
       subinterface:
         - admin_state: enable
           ipv4_address: 1.4.5.0/31
+
+    - name: ethernet-1/48
+      admin_state: enable
+      description: to_client3
+      # subinterface:
+      #   - admin_state: enable
+      #     ipv4_address: # configure IP towards client
+      
     - name: lo0
       admin_state: enable
       description: loopback0
@@ -396,6 +434,13 @@ clab-nanog83-leaf22:
         - admin_state: enable
           ipv4_address: 1.4.6.0/31
 
+    - name: ethernet-1/48
+      admin_state: enable
+      description: to_client3
+      # subinterface:
+      #   - admin_state: enable
+      #     ipv4_address: # configure IP towards client
+     
     - name: lo0
       admin_state: enable
       description: loopback0
@@ -418,7 +463,14 @@ clab-nanog83-leaf23:
       subinterface:
         - admin_state: enable
           ipv4_address: 1.4.7.0/31
-    
+
+    - name: ethernet-1/48
+      admin_state: enable
+      description: to_client4
+      # subinterface:
+      #   - admin_state: enable
+      #     ipv4_address: # configure IP towards client
+          
     - name: lo0
       admin_state: enable
       description: loopback0
@@ -442,6 +494,13 @@ clab-nanog83-leaf24:
         - admin_state: enable
           ipv4_address: 1.4.8.0/31
 
+    - name: ethernet-1/48
+      admin_state: enable
+      description: to_client4
+      # subinterface:
+      #   - admin_state: enable
+      #     ipv4_address: # configure IP towards client
+      
     - name: lo0
       admin_state: enable
       description: loopback0
