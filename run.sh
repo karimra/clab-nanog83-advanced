@@ -2,8 +2,8 @@
 
 set -e
 
-echo "gnmic version: $(gnmic version | grep version)"
-echo "clab version: $(sudo containerlab version | grep version)"
+echo "gnmic version : $(gnmic version | grep version | awk '{print $NF}')"
+echo "clab version  : $(sudo containerlab version | grep version | awk '{print $NF}')"
 # deploy the lab.
 # if you have limited compute resources, limit the number of workers by
 # uncommenting the `--max-workers 4` flag
@@ -56,7 +56,7 @@ sleep 5
 for node in $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 --format {{.Names}})
 do 
   bgp_state=$(gnmic-dev -a $node --tls-ca clab-nanog83/ca/root/root-ca.pem -u admin -p admin -e ascii --format flat get --path /network-instance[name=default]/protocols/bgp/oper-state | awk '{print $NF}')
-  echo "$(date): BGP state of $node is $bgp_state"
+  echo "$(date): BGP state of $node is ${bgp_state^^}"
   if [ $bgp_state != "up" ]; then 
     exit 1
   fi
