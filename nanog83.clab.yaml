@@ -166,7 +166,7 @@ topology:
     - endpoints: ["spine22:e1-6", "leaf24:e1-2"]
     # client1 links
     - endpoints: ["leaf11:e1-48", "client1:eth1"]
-    # - endpoints: ["leaf12:e1-48", "client1:eth2"]
+    - endpoints: ["leaf12:e1-48", "client1:eth2"]
     # client2 links
     - endpoints: ["leaf13:e1-48", "client2:eth1"]
     - endpoints: ["leaf14:e1-48", "client2:eth2"]
