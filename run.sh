@@ -71,7 +71,7 @@ printf "\n"
 printf "$(date): Waiting 15s for BGP sessions to be established\n"
 sleep 15
 
-for node in $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 -f label=is_spine=true --format {{.Names}})
+for node in $(docker ps -f label=clab-node-kind=srl -f label=containerlab=nanog83 -f label=clab-node-group=spines --format {{.Names}})
 do
 num_neighbors=$(
       gnmic -a $node \
